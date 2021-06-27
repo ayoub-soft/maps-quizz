@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+ 
+  <head>
+    <title>Moroccan landy Discovery</title>
+      <!-- Favicon-->
+      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+      <!-- Bootstrap icons-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+      <title>Moroccan landy Discovery</title>
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+    
+      <!-- Favicons -->
+      <link href="assets/img/icon.svg" rel="icon">
+      <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Vendor CSS Files -->
+      <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+      <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+ 
+      <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+
+        height: 500px;
+        /* The height is 400 pixels */
+        width: 50%;
+        margin-top: -140px;
+         
+  
+       margin-left: 270px;
+        /* The width is the width of the web page */
+		}
+		#nav {
+				list-style: none ;
+				margin: 0 ;
+				padding: 0 ;
+        
+				margin-left: 100px ;
+				margin-bottom: 100px ;
+				overflow: hidden ;		/* Création du contexte de formatage */
+				text-align: center ;
+        
+				}
+			#nav li {
+				float: left ;
+				width: 200px ;
+				height: 40px;
+		 
+				margin-left: 100px ;
+				margin-bottom: 10px ;
+				color: #fff ;
+			 
+			
+				}
+			#nav li a {
+				display: block ;
+				background: rgb(15, 15, 15) url(C1.PNG) left top  ;
+				color: #fff ;
+				font: 1em "Trebuchet MS",Arial,sans-serif ;
+				line-height: 1em ;
+				padding: 12px 0 ;
+				text-align: center ;
+				text-decoration: none ;
+				}
+			#nav li a:hover, #nav li a:focus, #nav li a:active {
+				background: rgb(243, 101, 6) url(C2.PNG) right top ;
+				 
+				}
+         
+	  
+    
+    </style>
+    <script>
+
+
+     function initMap(a,b) {
+        // The location of Uluru
+		var tab=new Array('Fès','Rabat','Agadir','Marrakech');
+		var tablat=new Array(34.033333,34.0242,30.424453,31.630000);
+			var tablng=new Array(-5.000000,-6.8227,-9.603355,-8.008889);
+			r=Math.floor(Math.random() * 4);
+      // Initialize and add the map
+	  a=tablat[r];
+	  b=tablng[r];
+
+        const uluru = {lat:a, lng:b};
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+	disableDefaultUI: true,
+  styles: [
+     {
+          elementType: 'labels',
+          stylers: [{ visibility: 'off' }]
+      }
+	  
+  ]
+  });
+      
+        // The marker, positioned at Uluru
+       const marker = new google.maps.Marker({
+	   position:uluru,
+         
+          
+		  map: map,
+        });
+ infoWindow = new google.maps.InfoWindow();
+  const locationButton = document.getElementById("b1");
+ 
+  locationButton.addEventListener("click", () => {
+  if(r==0){
+    infoWindow = new google.maps.InfoWindow();
+          infoWindow.setPosition(uluru);
+          infoWindow.setContent("bravo Location found is Fès");
+          infoWindow.open(map);
+          map.setCenter(uluru);
+		  }
+		 
+	
+  });
+
+ const locationButton2 = document.getElementById("b2");
+ 
+  locationButton2.addEventListener("click", () => {
+  if(r==1){
+    infoWindow = new google.maps.InfoWindow();
+          infoWindow.setPosition(uluru);
+          infoWindow.setContent("congratulations to you Location found is Rabat");
+          infoWindow.open(map);
+          map.setCenter(uluru);
+		   
+		  }
+ 
+	
+  });
+ const locationButton3 = document.getElementById("b3");
+ 
+  locationButton3.addEventListener("click", () => {
+    if(r==2){
+    infoWindow = new google.maps.InfoWindow();
+          infoWindow.setPosition(uluru);
+          infoWindow.setContent("congratulations to you Location found is Agadir.");
+          infoWindow.open(map);
+          map.setCenter(uluru);
+		  
+		  }
+		    
+	
+  });
+const locationButton4 = document.getElementById("b4");
+ 
+  locationButton4.addEventListener("click", () => {
+      if(r==3){
+    infoWindow = new google.maps.InfoWindow();
+          infoWindow.setPosition(uluru);
+          infoWindow.setContent("congratulations to you Location found is Marrakech.");
+          infoWindow.open(map);
+          map.setCenter(uluru);
+		   
+	
+		  }
+ 
+  });
+
+
+      }
+
+
+    </script>
+    
+  </head>
+    
+  <body bgcolor=''>
+  <!-- Responsive navbar-->
+     <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div  >
+        <h1 class="text-light"><a href="index.html"><span style="margin-left: 60px;font-size: 50px;"><B>Moroccan landy Discovery</B></span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+    
+    </div>
+  </header><!-- End Header -->
+
+  <div style="font-size:20px;font-family:Times New Roman;margin-left: 140px;margin-top: 200px;">
+    <h5>   A-Trouver la bonne Reponse</h5>  
+  
+    <h5>   testez vos connaissances sur les villes du maroc avec notre quiz</h5>   
+  <h5>   c'est quoi la ville marque sur la carte ?</h5>    
+  </div>  
+
+  
+   <!--The div element for the map -->
+   <table width="100%" border=0 >
+    <tr align=center><td width="40%" >
+  
+
+      
+    
+    <br><center><ul id="nav">
+        <li><a  onclick="myFunction()" href="#" id=b1 title="aller à la section 1">Fès</a></li><br><br>
+        <li><a  onclick="myFunction()" href="#" id=b2 title="aller à la section 2">Rabat</a></li><br><br>
+        <li><a  onclick="myFunction()" href="#" id=b3 title="aller à la section 3">Agadir</a></li><br><br>
+        <li><a  onclick="myFunction()" href="#" id=b4 title="aller à la section 4">Marrakech</a></li><br><br>
+  
+         
+      </ul></center>
+	<div id="msg"><b><a style="color: black;margin-left: 10px;font-size: 14px; " href="index.html"  >Annuler le Quiz</a><a id="A" style="color: black;margin-left: 200px;font-size: 14px;" href="quiz.html" >Question suivante</a></b></div>
+      <div id="myDIV"></div>
+      <div  style="display: inline-block";> 
+     
+    </div>
+    </td><td>
+    <div id="map"></div> 
+   
+</table>
+
+ 
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <!-- Footer-->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+           
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+ 
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Moroccan landy Discovery</span></strong>. All Rights Reserved
+      </div>
+  
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+ <!-- end Footer-->
+  </body>
+   
+     
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <!-- * *                               SB Forms JS                               * *-->
+  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</html>
+<script>
+  function myFunction() {
+   
+    document.getElementById('myDIV').innerHTML ="<button>encours </button>";
+ 
+ // On l'efface 8 secondes plus tard
+ setTimeout(function() {
+   document.getElementById('myDIV').innerHTML = "";
+ });
+}
+  </script>  
